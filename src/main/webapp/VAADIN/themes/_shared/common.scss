@@ -1,0 +1,148 @@
+@import "variables";
+
+@mixin common {
+
+  body, div, p, span, table, pre {
+    font-size: $v-font-size;
+  }
+
+  .valo-menu-title {
+    font-size: $v-font-size;
+  }
+
+  .valo-menu {
+    font-size: $v-font-size;
+    border-right: none;
+  }
+
+  .valo-menu .valo-systemitems {
+    background-color: $valo-menu-background-color;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0px;
+    border-top: valo-border($color: $valo-menu-background-color, $strength: 0.5, $border: first-number($v-border) solid v-tone);
+  }
+
+  .valo-menu-item {
+    overflow: hidden;
+  }
+
+  .v-ui[width-range~="-1100px"] {
+    .valo-menu-part {
+      min-width: initial;
+    }
+  }
+
+  .v-ui[width-range~="1101px-"] {
+    .valo-menu-part {
+      min-width: 200px;
+    }
+  }
+
+  .v-ui[width-range~="801px-"] {
+    .valo-menu {
+      @include animation(valo-animate-in-slide-right 500ms 500ms backwards);
+    }
+  }
+
+  .view-header {
+    padding: $view-padding;
+    .v-label-h4 {
+      line-height: $v-unit-size;
+      text-transform: none;
+      .v-icon {
+        margin-right: 5px;
+      }
+    }
+
+    @include width-range($max: 700px) {
+      padding: round($v-unit-size / 2);
+      .v-slot-h4 {
+        float: none;
+      }
+
+      .h4 {
+        font-size: round($v-font-size--h4 * 0.8);
+      }
+
+      > .v-slot {
+        display: block;
+      }
+
+      .v-button {
+        font-size: round($v-font-size * 0.8);
+        border-radius: 4px;
+      }
+
+      .toolbar {
+        white-space: normal;
+        > .v-spacing {
+          height: round($v-unit-size / 4);
+        }
+      }
+    }
+  }
+
+  // iOS7 & iOS8 status bar needs more space
+  .v-ios7,
+  .v-ios8 {
+    .v-ui {
+      @include box-sizing(border-box);
+      padding-top: 20px;
+      background-color: $valo-menu-background-color;
+
+      > .v-widget {
+        position: relative !important;
+      }
+    }
+    .valo-menu-title {
+      padding-top: 10px;
+    }
+    .view-content {
+      border-top-left-radius: $v-border-radius;
+      background-color: $v-app-background-color;
+    }
+  }
+
+  .v-ios7 & .v-ui[width-range~="0-800px"],
+  .v-ios8 & .v-ui[width-range~="0-800px"] {
+    padding-top: 20px + $v-unit-size;
+
+    .v-loading-indicator {
+      top: 20px + $v-unit-size - 3px;
+      height: 3px;
+    }
+
+    .valo-menu-title {
+      height: 20px + $v-unit-size !important;
+      padding-top: 20px;
+    }
+    .valo-menu-toggle,
+    .user-menu {
+      margin-top: 20px;
+    }
+    .valo-menuitems {
+      top: 20px + $v-unit-size;
+    }
+    .view-content {
+      border-radius: 0;
+    }
+  }
+
+  .v-grid {
+    .v-grid-header th {
+      font-size: $v-font-size;
+      padding: 0 9px;
+    }
+    .v-grid-column-header-content {
+      line-height: $v-unit-size;
+    }
+    .v-grid-cell {
+      font-size: $v-font-size;
+      line-height: $v-unit-size;
+      padding: 0 9px;
+    }
+  }
+
+}

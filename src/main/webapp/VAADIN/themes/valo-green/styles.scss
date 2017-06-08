@@ -1,0 +1,10 @@
+@import "variables";
+@import "../valo/valo";
+@import "../_shared/common";
+@import "../_shared/login";
+
+.valo-green {
+   @include valo;
+   @include common;
+   @include login;
+}
