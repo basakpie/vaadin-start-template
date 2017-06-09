@@ -39,7 +39,11 @@
 *.so            binary
 *.war           binary
 
+src/main/webapp/VAADIN/themes/_shared/* linguist-vendored
+src/main/webapp/VAADIN/themes/valo-default/* linguist-vendored
+src/main/webapp/VAADIN/themes/valo-green/* linguist-vendored
+src/main/webapp/VAADIN/themes/valo-red/* linguist-vendored
+src/main/webapp/VAADIN/themes/valo-yellow/* linguist-vendored
 
 
-src/main/webapp/VAADIN/themes/Demo/* linguist-vendored
 
